@@ -1,14 +1,20 @@
-export const metadata = { title: "Module 1 - Hello Next.js", description: "Your first Next.js App Router page" };
+export const metadata = { title: "Module 2 - Tailwind & Layout", description: "Global styles + components" };
+import "./globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ fontFamily: 'system-ui, sans-serif', padding: 16 }}>
-        <header style={{ marginBottom: 24 }}>
-          <h1>Module 1: Hello Next.js</h1>
-          <nav><a href="/">Home</a></nav>
+      <body className="min-h-screen bg-gray-50 text-gray-900">
+        <header className="p-4 shadow bg-white">
+          <div className="max-w-4xl mx-auto flex items-center justify-between">
+            <a href="/" className="font-bold">Module 2</a>
+            <nav className="space-x-4 text-sm">
+              <a href="/" className="hover:underline">Home</a>
+              <a href="/about" className="hover:underline">About</a>
+            </nav>
+          </div>
         </header>
-        <main>{children}</main>
-        <footer style={{ marginTop: 24, fontSize: 12, opacity: 0.6 }}>© Learn Next.js</footer>
+        <main className="max-w-4xl mx-auto p-4">{children}</main>
+        <footer className="max-w-4xl mx-auto p-4 text-xs text-gray-500">© Learn Next.js</footer>
       </body>
     </html>
   );
